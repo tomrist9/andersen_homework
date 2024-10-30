@@ -24,7 +24,7 @@ public class TicketService {
             tickets.add(new Ticket("ID7", "Hall7", "007", LocalDateTime.now().plusDays(7), true, StudiumSector.DEFAULT, 9.0, BigDecimal.valueOf(85)));
             tickets.add(new Ticket("ID8", "Hall8", "008", LocalDateTime.now().plusDays(8), false, StudiumSector.DEFAULT, 4.0, BigDecimal.valueOf(90)));
             tickets.add(new Ticket("ID9", "Hall9", "009", LocalDateTime.now().plusDays(9), true, StudiumSector.DEFAULT, 6.5, BigDecimal.valueOf(95)));
-            tickets.add(new Ticket("ID10", "Hall10", "010", LocalDateTime.now().plusDays(10), false, StudiumSector.DEFAULT, 5.0, BigDecimal.valueOf(100)));
+            tickets.add(new Ticket("ID10", "Hall11", "010", LocalDateTime.now().plusDays(10), false, StudiumSector.DEFAULT, 5.0, BigDecimal.valueOf(100)));
         }
 
         public Ticket getTicketById(String id) {
