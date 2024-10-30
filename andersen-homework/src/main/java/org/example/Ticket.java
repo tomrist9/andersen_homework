@@ -18,7 +18,7 @@ public class Ticket {
     private String eventCode;
 
     @Min(value=0, message = "Time must be a positive Unix timestamp")
-    private long time;
+    private LocalDateTime time;
 
     private boolean isPromo;
 
@@ -30,7 +30,7 @@ public class Ticket {
     private BigDecimal price;
 
 
-    public Ticket(String id, String concertHall, String eventCode, long time, boolean isPromo, StudiumSector studiumSector, double maxBackpackWeight, BigDecimal price) {
+    public Ticket(String id, String concertHall, String eventCode, LocalDateTime time, boolean isPromo, StudiumSector studiumSector, double maxBackpackWeight, BigDecimal price) {
         this.id = id;
         this.concertHall = concertHall;
         this.eventCode = eventCode;
@@ -42,7 +42,7 @@ public class Ticket {
         this.price = price;
     }
 
-    public Ticket( String concertHall, String eventCode, long time,  BigDecimal price) {
+    public Ticket( String concertHall, String eventCode, LocalDateTime time,  BigDecimal price) {
 
         this.concertHall = concertHall;
         this.eventCode = eventCode;
@@ -53,6 +53,7 @@ public class Ticket {
     public Ticket() {
         this.createdAt = LocalDateTime.now();
     }
+
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
@@ -66,7 +67,9 @@ public class Ticket {
         this.price = price;
     }
 
-
+    public String getId() {
+        return id;
+    }
 
     @Override
     public String toString() {
