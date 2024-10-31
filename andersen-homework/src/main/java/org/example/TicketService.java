@@ -16,5 +16,16 @@ public class TicketService {
 
         Ticket limitedTicket=new Ticket("SydneyHall", "543", 1700000000L,new BigDecimal("150"));
         System.out.println("Limited ticket has been created"+ limitedTicket);
+
+        // Function to return tickets by stadium sector
+        public List<Ticket> getTicketsBySector(char sector) {
+            List<Ticket> filteredTickets = new ArrayList<>();
+            for (Ticket ticket : tickets) {
+                if (ticket.getStadiumSector() == sector) {
+                    filteredTickets.add(ticket);
+                }
+            }
+            return filteredTickets;
+        }
     }
 }
