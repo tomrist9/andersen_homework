@@ -18,7 +18,7 @@ public class TicketService {
         System.out.println("Limited ticket has been created"+ limitedTicket);
 
         // Function to return tickets by stadium sector
-        public List<Ticket> getTicketsBySector(char sector) {
+        public List<Ticket> getTicketsBySector(StudiumSector sector) {
             List<Ticket> filteredTickets = new ArrayList<>();
             for (Ticket ticket : tickets) {
                 if (ticket.getStadiumSector() == sector) {
