@@ -33,13 +33,8 @@ public class TicketService {
                     return ticket;
                 }
             }
-            return null; // Return null if no ticket with the given ID is found
+            return null;
         }
 
-        public static void main(String[] args) {
-            TicketService ticketService = new TicketService();
 
-            System.out.println(ticketService.getTicketById("ID1"));
-            System.out.println(ticketService.getTicketById("ID11"));
-        }
     }

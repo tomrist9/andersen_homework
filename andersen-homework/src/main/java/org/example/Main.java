@@ -4,12 +4,9 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
+        TicketService ticketService = new TicketService();
 
-        int[] numbers = {1, 2, 3, 4, 5};
-        System.out.println("Numbers: " + Arrays.toString(numbers));
-
-
-
-        System.out.println("Hello world!");
+        System.out.println(ticketService.getTicketById("ID1"));
+        System.out.println(ticketService.getTicketById("ID11"));
     }
 }
