@@ -1,25 +1,84 @@
 package org.example.model;
 
-import jakarta.validation.constraints.DecimalMax;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.Pattern;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.example.enums.StudiumSector;
+import org.example.annotations.NullableWarning;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+
 import java.util.Objects;
 
-@Getter
-@Setter
+
 @NoArgsConstructor
-@AllArgsConstructor
-public class Ticket {
-    private String ticketClass;
-    private String ticketType;
-    private String startDate;
-    private Integer price;
+public class Ticket extends BaseEntity{
+
+        private String time;
+        private String stadiumSector;
+        @NullableWarning
+        private Integer price;
+
+
+    public Ticket(String time, String stadiumSector, Integer price) {
+        this.time = time;
+        this.stadiumSector = stadiumSector;
+        this.price = price;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getStadiumSector() {
+        return stadiumSector;
+    }
+
+    public void setStadiumSector(String stadiumSector) {
+        this.stadiumSector = stadiumSector;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public String getAllValues() {
+            return ", Time: " + time + ", Stadium Sector: " + stadiumSector;
+        }
+    public void shared(String phone) {
+        System.out.println("Ticket shared via phone: " + phone);
+    }
+
+    public void shared(String phone, String email) {
+        System.out.println("Ticket shared via phone: " + phone + " and email: " + email);
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        Ticket ticket = (Ticket) object;
+        return Objects.equals(getTime(), ticket.getTime()) && Objects.equals(getStadiumSector(), ticket.getStadiumSector()) && Objects.equals(getPrice(), ticket.getPrice());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getTime(), getStadiumSector(), getPrice());
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+
+                ", time='" + time + '\'' +
+                ", stadiumSector='" + stadiumSector + '\'' +
+                ", price=" + price +
+                '}';
+    }
+
+
 }

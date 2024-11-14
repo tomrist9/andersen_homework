@@ -1,20 +1,23 @@
 package org.example;
 
+import org.example.annotations.NullChecker;
+import org.example.model.Admin;
 import org.example.model.Ticket;
+import org.example.model.Client;
 
-import java.io.IOException;
-import java.util.List;
-
-import static org.example.service.TicketService.loadTickets;
-import static org.example.service.TicketService.validateTickets;
 
 public class Main {
     public static void main(String[] args) {
-        try {
-            List<Ticket> tickets = loadTickets("tickets.json");
-            validateTickets(tickets);
-        } catch (IOException e) {
-            System.out.println("Error reading file: " + e.getMessage());
-        }
+        Ticket ticket = new Ticket();
+        NullChecker.checkForNullWarnings(ticket);
+
+        Client user = new Client();
+        user.printRole();
+        Ticket userTicket = user.getTicket();
+        userTicket.shared("1234567890", "user@example.com");
+
+        Admin admin = new Admin();
+        admin.printRole();
+        admin.checkTicket(userTicket);
     }
 }
