@@ -3,10 +3,10 @@ package org.util;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class TestArrayList <T>{
+public class CustomArrayList <T>{
     private Object[] items;
     int size=0;
-    public TestArrayList() {
+    public CustomArrayList() {
         items = new Object[10];
     }
 
@@ -24,7 +24,7 @@ public class TestArrayList <T>{
         }
         return (T) items[index];
     }
-    public int delete(int index) {
+    public void delete(int index) {
         if (index == 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index out of bounds");
         }
