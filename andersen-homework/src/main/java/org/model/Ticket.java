@@ -16,9 +16,9 @@ import java.util.Objects;
 
 public class Ticket {
 
-    public String startDate;
+    public LocalDate startDate;
     String ticketClass;
-    public String ticketType;
+    public TicketType ticketType;
 
     public Integer price;
 
@@ -28,8 +28,8 @@ public class Ticket {
     @JsonCreator
     public Ticket(
             @JsonProperty("ticketClass") String ticketClass,
-            @JsonProperty("ticketType") String ticketType,
-            @JsonProperty("startDate") String startDate,
+            @JsonProperty("ticketType") TicketType ticketType,
+            @JsonProperty("startDate") LocalDate startDate,
             @JsonProperty("price") Integer price) {
         this.ticketClass = ticketClass;
         this.ticketType = ticketType;
