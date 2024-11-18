@@ -1,23 +1,61 @@
-import org.model.Ticket;
-import org.util.BusTicketValidator;
-
-import java.io.IOException;
-import java.util.List;
+import org.util.CustomArrayList;
+import org.util.CustomHashSet;
 
 public class Main {
     public static void main(String[] args) {
-        BusTicketValidator validator = new BusTicketValidator();
+        System.out.println("Testing CustomArrayList:");
+        testCustomArrayList();
+
+        System.out.println("\nTesting CustomHashSet:");
+        testCustomHashSet();
+    }
+
+    private static void testCustomArrayList() {
+        CustomArrayList<String> customArrayList = new CustomArrayList<>();
+        customArrayList.put("Apple");
+        customArrayList.put("Banana");
+        customArrayList.put("Grapes");
+        customArrayList.put("Peach");
 
 
-        try {
-            // Load tickets from JSON file
-            List<Ticket> tickets = validator.loadTicketsFromFile("tickets.json");
+        System.out.println("Element at index 2: " + customArrayList.get(2)); // Grapes
 
-            // Process tickets
-            validator.processTickets(tickets);
-        } catch (IOException e) {
-            System.err.println("Failed to load tickets from file: " + e.getMessage());
+
+        customArrayList.delete(2);
+        System.out.println("After deleting index 2: " + customArrayList);
+
+
+        for (int i = 0; i < 15; i++) {
+            customArrayList.put("Element " + i);
         }
+        System.out.println("CustomArrayList after adding 15 more elements: " + customArrayList);
+        System.out.println("Size of CustomArrayList: " + customArrayList.size());
     }
+
+    private static void testCustomHashSet() {
+
+        CustomHashSet<String> customHashSet = new CustomHashSet<>();
+        customHashSet.put("Apple");
+        customHashSet.put("Banana");
+        customHashSet.put("Grapes");
+        customHashSet.put("Apple");
+
+
+        System.out.println("Contains 'Apple': " + customHashSet.contains("Apple")); // true
+        System.out.println("Contains 'Orange': " + customHashSet.contains("Orange")); // false
+
+
+        customHashSet.delete("Banana");
+        System.out.println("After deleting 'Banana':");
+        customHashSet.iterate();
+
+
+        for (int i = 0; i < 20; i++) {
+            customHashSet.put("Element " + i);
+        }
+        System.out.println("CustomHashSet size after adding 20 more elements: " + customHashSet.size());
+        System.out.println("Elements in CustomHashSet:");
+        customHashSet.iterate();
     }
+}
 

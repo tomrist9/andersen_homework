@@ -1,6 +1,5 @@
 package org.util;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class CustomArrayList <T>{
@@ -37,4 +36,12 @@ public class CustomArrayList <T>{
         items= Arrays.copyOf(items, items.length*2);
     }
 
+
+    public int getSize() {
+        return size;
+    }
+
+    public int size() {
+        return size;
+    }
 }
