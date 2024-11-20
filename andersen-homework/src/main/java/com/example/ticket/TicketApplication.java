@@ -1,11 +1,16 @@
 import org.model.Ticket;
 import org.util.BusTicketValidator;
-
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.io.IOException;
 import java.util.List;
-
-public class Main {
+@SpringBootApplication
+public class TicketApplication {
     public static void main(String[] args) {
+
+            SpringApplication.run(TicketApplication.class, args);
+
+
         BusTicketValidator validator = new BusTicketValidator();
 
 

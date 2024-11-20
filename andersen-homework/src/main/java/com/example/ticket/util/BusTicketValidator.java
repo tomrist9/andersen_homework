@@ -2,18 +2,23 @@ package org.util;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.model.Ticket;
 import org.model.TicketType;
 
 import java.io.*;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.*;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+import java.util.*;
+@Component
 public class BusTicketValidator {
     private int totalTickets = 0;
     private int validTickets = 0;
     private Map<String, Integer> violationCounts = new HashMap<>();
+    @Value("${ticket.file.name}")
+    private String ticketFileName;
 
     public BusTicketValidator() {
         violationCounts.put("start date", 0);
