@@ -41,7 +41,5 @@ public class CustomArrayList <T>{
         return size;
     }
 
-    public int size() {
-        return size;
-    }
+
 }

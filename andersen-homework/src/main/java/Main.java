@@ -18,7 +18,7 @@ public class Main {
         customArrayList.put("Peach");
 
 
-        System.out.println("Element at index 2: " + customArrayList.get(2)); // Grapes
+        System.out.println("Element at index 2: " + customArrayList.get(2));
 
 
         customArrayList.delete(2);
@@ -29,7 +29,7 @@ public class Main {
             customArrayList.put("Element " + i);
         }
         System.out.println("CustomArrayList after adding 15 more elements: " + customArrayList);
-        System.out.println("Size of CustomArrayList: " + customArrayList.size());
+        System.out.println("Size of CustomArrayList: " + customArrayList.getSize());
     }
 
     private static void testCustomHashSet() {
@@ -41,8 +41,8 @@ public class Main {
         customHashSet.put("Apple");
 
 
-        System.out.println("Contains 'Apple': " + customHashSet.contains("Apple")); // true
-        System.out.println("Contains 'Orange': " + customHashSet.contains("Orange")); // false
+        System.out.println("Contains 'Apple': " + customHashSet.contains("Apple"));
+        System.out.println("Contains 'Orange': " + customHashSet.contains("Orange"));
 
 
         customHashSet.delete("Banana");

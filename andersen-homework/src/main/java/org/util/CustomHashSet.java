@@ -10,6 +10,7 @@ public class CustomHashSet<T> {
 
     
     public CustomHashSet() {
+
         this.buckets = new LinkedList[DEFAULT_CAPACITY];
     }
 
