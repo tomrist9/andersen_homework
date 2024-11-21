@@ -1,7 +1,7 @@
 plugins {
-    id("org.springframework.boot") version "3.1.3"
-    id("io.spring.dependency-management") version "1.1.3"
-    kotlin("jvm") version "1.9.10" // Include only if Kotlin is used
+    id("org.springframework.boot") version "3.1.2" // Previous version before 3.1.3
+    id("io.spring.dependency-management") version "1.1.2" // Compatible with Spring Boot 3.1.2
+    kotlin("jvm") version "1.9.10" // Include if you're using Kotlin
 }
 
 group = "org.example"
@@ -25,7 +25,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
 
 
-    // Corrected dependency syntax for Kotlin DSL
+
     implementation("jakarta.validation:jakarta.validation-api:3.0.2")
     implementation ("com.fasterxml.jackson.core:jackson-databind:2.15.2" )// Replace with the latest version if needed
 

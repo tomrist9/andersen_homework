@@ -1,4 +1,4 @@
-package org.model;
+package com.example.ticket.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -18,7 +18,7 @@ public class Ticket {
 
     private LocalDate startDate;
     private String ticketClass;
-    private org.model.TicketType ticketType;
+    private TicketType ticketType;
 
     public Integer price;
 
@@ -28,7 +28,7 @@ public class Ticket {
     @JsonCreator
     public Ticket(
             @JsonProperty("ticketClass") String ticketClass,
-            @JsonProperty("ticketType") org.model.TicketType ticketType,
+            @JsonProperty("ticketType") TicketType ticketType,
             @JsonProperty("startDate") LocalDate startDate,
             @JsonProperty("price") Integer price) {
         this.ticketClass = ticketClass;

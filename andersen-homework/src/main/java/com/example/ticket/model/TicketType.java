@@ -1,7 +1,5 @@
-package org.model;
+package com.example.ticket.model;
 
 public enum TicketType {
-    DAY,
-    WEEK,
-    MONTH;
+    DAY, WEEK, MONTH;
 }
