@@ -30,8 +30,8 @@ public class BusTicketValidator {
         List<String> violations = new ArrayList<>();
 
 
-        if (EnumSet.of(TicketType.DAY, TicketType.WEEK, TicketType.MONTH).contains(ticket.ticketType) &&
-                ticket.startDate == null) {
+        if (EnumSet.of(TicketType.DAY, TicketType.WEEK, TicketType.MONTH).contains(ticket.getTicketType()) &&
+                ticket.getStartDate() == null) {
             violations.add("start date");
             violationCounts.put("start date", violationCounts.getOrDefault("start date", 0) + 1);
         }
@@ -43,14 +43,14 @@ public class BusTicketValidator {
         }
 
 
-        if (ticket.startDate != null) {
-            if (ticket.startDate.isAfter(LocalDate.now())) {
+        if (ticket.getStartDate() != null) {
+            if (ticket.getStartDate().isAfter(LocalDate.now())) {
                 violations.add("start date in the future");
                 violationCounts.put("start date", violationCounts.getOrDefault("start date", 0) + 1);
             }
         }
 
-        if (!EnumSet.allOf(TicketType.class).contains(ticket.ticketType)) {
+        if (!EnumSet.allOf(TicketType.class).contains(ticket.getTicketType())) {
             violations.add("ticket type");
             violationCounts.put("ticket type", violationCounts.getOrDefault("ticket type", 0) + 1);
         }

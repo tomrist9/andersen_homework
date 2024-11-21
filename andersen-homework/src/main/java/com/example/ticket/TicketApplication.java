@@ -1,3 +1,5 @@
+package com.example.ticket;
+
 import org.model.Ticket;
 import org.util.BusTicketValidator;
 import org.springframework.boot.SpringApplication;
