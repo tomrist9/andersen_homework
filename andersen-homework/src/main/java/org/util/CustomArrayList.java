@@ -2,27 +2,31 @@ package org.util;
 
 import java.util.Arrays;
 
-public class CustomArrayList <T>{
+public class CustomArrayList<T> {
+    private static final int DEFAULT_CAPACITY = 10;
+
     private Object[] items;
-    int size=0;
+    private int size = 0;
+
     public CustomArrayList() {
-        items = new Object[10];
+        items = new Object[DEFAULT_CAPACITY];
     }
 
     public void put(T item) {
-        if(size==items.length){
+        if (size == items.length) {
             resize();
 
         }
-        items[size++]=item;
+        items[size++] = item;
     }
 
-    public T get(int index){
-        if(index < 0 || index >= size){
+    public T get(int index) {
+        if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index out of bounds");
         }
         return (T) items[index];
     }
+
     public void delete(int index) {
         if (index == 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index out of bounds");
@@ -32,8 +36,9 @@ public class CustomArrayList <T>{
         }
         items[--size] = null;
     }
-    private void resize(){
-        items= Arrays.copyOf(items, items.length*2);
+
+    private void resize() {
+        items = Arrays.copyOf(items, items.length * 2);
     }
 
 

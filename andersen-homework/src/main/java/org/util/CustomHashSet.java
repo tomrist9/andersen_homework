@@ -8,25 +8,25 @@ public class CustomHashSet<T> {
     private static final int DEFAULT_CAPACITY = 16;
     private static final double LOAD_FACTOR = 0.75;
 
-    
+
     public CustomHashSet() {
 
         this.buckets = new LinkedList[DEFAULT_CAPACITY];
     }
 
-    
+
     private int getBucketIndex(T element) {
         return Math.abs(element.hashCode() % buckets.length);
     }
 
-    
+
     public void put(T element) {
         if (contains(element)) {
-            return; 
+            return;
         }
 
         if ((double) size / buckets.length >= LOAD_FACTOR) {
-            resize(); 
+            resize();
         }
 
         int index = getBucketIndex(element);
@@ -47,7 +47,7 @@ public class CustomHashSet<T> {
         return buckets[index].contains(element);
     }
 
-    
+
     public void delete(T element) {
         int index = getBucketIndex(element);
         if (buckets[index] != null && buckets[index].remove(element)) {
@@ -64,20 +64,18 @@ public class CustomHashSet<T> {
         for (LinkedList<T> bucket : oldBuckets) {
             if (bucket != null) {
                 for (T element : bucket) {
-                    put(element); 
+                    put(element);
                 }
             }
         }
     }
-
-    
 
 
     public int getSize() {
         return size;
     }
 
-    
+
     public void iterate() {
         for (LinkedList<T> bucket : buckets) {
             if (bucket != null) {
