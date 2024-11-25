@@ -1,2 +1,7 @@
-package org.example;public enum TicketType {
+package org.example.enums;
+public enum TicketType {
+    DAY,
+    WEEK,
+    MONTH,
+    YEAR
 }
