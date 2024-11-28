@@ -1,23 +1,20 @@
-.gradle
+### Build and IDE Directories ###
+.gradle/
 build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
 .idea/
+*.iml
+*.ipr
+*.iws
+out/
+bin/
 
-### IntelliJ IDEA ###
+# Specific IntelliJ IDEA Configuration Files
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
-*.iws
-*.iml
-*.ipr
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
 
-### Eclipse ###
+# Eclipse Files
 .apt_generated
 .classpath
 .factorypath
@@ -25,58 +22,56 @@ out/
 .settings
 .springBeans
 .sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
 
-### NetBeans ###
+# NetBeans Files
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
 
-### VS Code ###
+# Visual Studio Code
 .vscode/
 
-### Mac OS ###
+### OS-Specific Files ###
+# MacOS
 .DS_Store
 
-# Ignore ZIP files
-*.zip
+# Temporary and Backup Files
+*.tmp
+~$*
 
-# Ignore images
+### Executables and Installers ###
+*.exe
+*.msi
+
+### Compressed Files ###
+*.zip
+*.rar
+*.tgz
+
+### Media Files ###
 *.jpg
 *.jpeg
 *.png
 *.jfif
 *.webp
 *.heic
-
-# Ignore PDF and document files
-*.pdf
-*.doc
-*.docx
-
-# Ignore executable and installer files
-*.exe
-*.msi
-
-# Ignore audio and video files
 *.mp3
 *.mov
 *.mkv
 *.mp4
 
-# Ignore temporary and backup files
-*.tmp
-~$*
+### Documents ###
+*.pdf
+*.doc
+*.docx
 
-# Ignore IntelliJ IDEA configuration files
-.idea/
-*.iml
+### Data Files ###
+*.csv
+*.v1
 
-# Ignore folders
+### Ignore Specific Folders ###
 ResumeDbAppJPASpring/
 lasresume/
 andersen_trainee/
@@ -86,11 +81,3 @@ user_management/
 turbox/
 zoom-cloud-meetings-5-12-3.exe
 zubi/
-
-# Ignore all RAR and tar files
-*.rar
-*.tgz
-
-# Ignore CSV and other data files
-*.csv
-*.v1
