@@ -2,6 +2,7 @@ package org.example.dao.impl;
 
 import org.example.config.DatabaseConnection;
 import org.example.dao.UserDao;
+import org.example.mapper.UserMapper;
 import org.example.model.User;
 
 import java.sql.*;
@@ -30,11 +31,7 @@ public class UserDaoImpl implements UserDao {
                 statement.setInt(1, id);
                 ResultSet resultSet = statement.executeQuery();
                 if (resultSet.next()) {
-                    return new User(
-                            resultSet.getInt("id"),
-                            resultSet.getString("name"),
-                            resultSet.getDate("created_at").toLocalDate()
-                    );
+                    return UserMapper.mapToUser(resultSet);
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
