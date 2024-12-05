@@ -1,55 +1,69 @@
-package org.example.model;
+package org.example.entity;
 
-import org.example.dao.TicketDao;
+
+import jakarta.persistence.*;
 import org.example.enums.TicketType;
 
-public class Ticket extends BaseEntity {
+@Entity
+@Table(name = "ticket")
+public class Ticket {
 
-    private int userId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+
+    @Enumerated(EnumType.STRING) // Map Java enum to PostgreSQL ENUM as a string
+    @Column(name = "ticket_type")
     private TicketType ticketType;
-    private String description;
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     public Ticket() {
     }
 
-    public Ticket(int id, int userId, TicketType ticketType, String description) {
-        this.setId(id);
-        this.userId = userId;
+    public Ticket(Long id, TicketType ticketType, User user) {
+        this.id = id;
         this.ticketType = ticketType;
-        this.description = description;
+        this.user = user;
     }
 
-
-    public int getUserId() {
-        return userId;
+    public Long getId() {
+        return id;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public TicketType getTicketType() {
         return ticketType;
     }
 
-    public void TicketType(TicketType ticketType) {
+    public void setTicketType(TicketType ticketType) {
         this.ticketType = ticketType;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     @Override
     public String toString() {
         return "Ticket{" +
-                "userId=" + userId +
-                ", ticketType='" + ticketType + '\'' +
-                ", description='" + description + '\'' +
+                "id=" + id +
+
+                ", ticketType=" + ticketType +
+
                 '}';
     }
 }
+

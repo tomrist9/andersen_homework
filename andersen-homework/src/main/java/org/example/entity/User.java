@@ -1,20 +1,41 @@
-package org.example.model;
+package org.example.entity;
+
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
-public class User extends BaseEntity {
+@Entity
+@Table(name = "users")
+public class User {
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "name")
     private String name;
-    private LocalDate createdAt;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Ticket> tickets;
+
 
 
     public User() {
     }
 
-    public User(int id,String name, LocalDate createdAt) {
-        this.setId(id);
+    public User(Long id, String name, List<Ticket> tickets) {
+        this.id = id;
         this.name = name;
-        this.createdAt = createdAt;
+        this.tickets = tickets;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -25,19 +46,19 @@ public class User extends BaseEntity {
         this.name = name;
     }
 
-    public LocalDate getCreatedAt() {
-        return createdAt;
+    public List<Ticket> getTickets() {
+        return tickets;
     }
 
-    public void setCreatedAt(LocalDate createdAt) {
-        this.createdAt = createdAt;
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
-                ", createdAt=" + createdAt +
+                ", tickets=" + tickets +
                 '}';
     }
 }
