@@ -1,0 +1,20 @@
+hibernate:
+  connection:
+    driver_class: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: ""
+  dialect: org.hibernate.dialect.H2Dialect
+  show_sql: true
+  hbm2ddl:
+    auto: update
+
+db:
+  url: jdbc:postgresql://localhost:5432/postgres
+  user: postgres
+  password: 5554
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect

@@ -9,8 +9,8 @@ repositories {
     mavenCentral()
 }
 java {
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = JavaVersion.VERSION_19
+    targetCompatibility = JavaVersion.VERSION_19
 }
 
 
@@ -21,7 +21,14 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 
+    implementation ("org.hibernate:hibernate-core:6.2.14.Final")
 
+
+    runtimeOnly ("com.h2database:h2:2.1.214")
+
+
+    implementation ("org.slf4j:slf4j-api:2.0.9")
+    runtimeOnly ("org.slf4j:slf4j-simple:2.0.9")
     implementation("jakarta.validation:jakarta.validation-api:3.0.2")
 }
 
