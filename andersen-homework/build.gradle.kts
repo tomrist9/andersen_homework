@@ -11,8 +11,8 @@ repositories {
 java {
     sourceCompatibility = JavaVersion.VERSION_21
     targetCompatibility = JavaVersion.VERSION_21
-}
 
+}
 
 dependencies {
     implementation("org.jetbrains:annotations:24.0.0")
