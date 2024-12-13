@@ -1,6 +1,9 @@
 plugins {
-    id("java")
+    id("org.springframework.boot") version "3.1.4" // Use the latest Spring Boot version
+    id("io.spring.dependency-management") version "1.1.3"
+    id ("java")
 }
+
 
 group = "org.example"
 version = "1.0-SNAPSHOT"
@@ -8,13 +11,18 @@ version = "1.0-SNAPSHOT"
 repositories {
     mavenCentral()
 }
+
 java {
-    sourceCompatibility = JavaVersion.VERSION_19
-    targetCompatibility = JavaVersion.VERSION_19
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 
 dependencies {
+    implementation ("org.springframework.boot:spring-boot-starter-data-jpa")
+    runtimeOnly ("org.postgresql:postgresql")
+    implementation ("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.jetbrains:annotations:24.0.0")
     implementation("org.postgresql:postgresql:42.6.0")
     implementation("org.jetbrains:annotations:24.0.0")

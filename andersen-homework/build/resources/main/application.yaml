@@ -1,0 +1,27 @@
+spring:
+  security:
+    user:
+      name: andersen
+      password: password
+
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 5554
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+app:
+  allow:
+    user-update-and-ticket-creation: true
+
+    my:
+      custom:
+        bean:
+          enabled: true
+
+server:
+  port: 8086
