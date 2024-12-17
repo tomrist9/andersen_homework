@@ -1,26 +1,36 @@
 package com.example.ticket.service;
 
-import com.example.ticket.entity.Ticket;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
-import java.io.InputStream;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class TicketService {
-    @Value("${classpath:tickets.json}")
-    private Resource resource;
+
+    private final Map<String, String> ticketRepository = new HashMap<>();
 
 
-    public List<Ticket> loadTickets() throws Exception {
-        ObjectMapper objectMapper = new ObjectMapper();
-        TypeReference<List<Ticket>> tickets = new TypeReference<List<Ticket>>() {
-        };
-        InputStream inputStream = resource.getInputStream();
-        return objectMapper.readValue(inputStream, tickets);
+    public boolean createTicket(String ticketId, String description) {
+        if (ticketRepository.containsKey(ticketId)) {
+            return false;
+        }
+        ticketRepository.put(ticketId, description);
+        return true;
+    }
+
+
+    public boolean cancelTicket(String ticketId) {
+        if (!ticketRepository.containsKey(ticketId)) {
+            return false;
+        }
+        ticketRepository.remove(ticketId);
+        return true;
+    }
+
+
+    public Optional<String> findTicketById(String ticketId) {
+        return Optional.ofNullable(ticketRepository.get(ticketId));
     }
 }
