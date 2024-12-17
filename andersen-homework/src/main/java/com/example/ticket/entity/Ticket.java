@@ -19,7 +19,7 @@ public class Ticket {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
 
-    @JsonIgnore // P
+    @JsonIgnore
     private User user;
 
     public Ticket() {
