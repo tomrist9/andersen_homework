@@ -106,8 +106,8 @@ If you want to contribute to this project:
 
 For any questions or feedback, feel free to reach out:
 - **Email**: tomristt9@gmail.com
-- **LinkedIn**: [[Your LinkedIn Profile][(https://www.linkedin.com/in/your-profile](https://www.linkedin.com/in/tomris-t-b4656016a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BRQuDqVe5Q1Gz7NvpyPnTvQ%3D%3D))
-]
+- **LinkedIn**: https://www.linkedin.com/in/tomris-t-b4656016a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BRQuDqVe5Q1Gz7NvpyPnTvQ%3D%3D
+
 ---
 
 Thank you for checking out this repository! 🌟
