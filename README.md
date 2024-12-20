@@ -6,13 +6,9 @@ Welcome to the repository for the **Andersen Java Course**! This repository cont
 
 The Andersen Java Course is a comprehensive training program designed to enhance skills in:
 - Java Core
-- Microservices architecture
 - Spring Framework (Spring Boot, Spring Data, Spring Security, etc.)
-- Kafka
-- Domain-Driven Design (DDD)
 - Clean Code principles
 - Testing (JUnit, Mockito)
-- Docker and Kubernetes
 
 The course includes both theoretical lessons and hands-on practice to prepare participants for real-world software development challenges.
 
@@ -49,22 +45,18 @@ The repository is organized as follows:
 
 ## Key Features
 
-### 1. Domain-Driven Design (DDD)
-- Implementation of bounded contexts and domain models.
-- Separation of concerns for clean and maintainable code.
-
-### 2. Microservices
+### 1. Microservices
 - Independent services communicating via REST APIs and Kafka.
 - Designed for scalability and fault tolerance.
 
-### 3. Spring Boot Framework
+### 2. Spring Boot Framework
 - Utilization of Spring Boot for rapid development.
 - Key modules used: Spring Data JPA, Spring Security, Spring Web.
 
-### 4. Event-Driven Architecture
+### 2. Event-Driven Architecture
 - Integration with **Apache Kafka** for asynchronous communication.
 
-### 5. Testing
+### 4. Testing
 - Comprehensive unit and integration tests written with **JUnit** and **Mockito**.
 
 ---
@@ -84,7 +76,7 @@ To run or build the project, ensure the following are installed:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/andersen-java-course.git
+git clone https://github.com/tomrist9/andersen_homework.git
 ```
 
 ### 2. Build the Project
@@ -113,9 +105,9 @@ If you want to contribute to this project:
 ## Contact
 
 For any questions or feedback, feel free to reach out:
-- **Email**: your-email@example.com
-- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/your-profile)
-
+- **Email**: tomristt9@gmail.com
+- **LinkedIn**: [[Your LinkedIn Profile][(https://www.linkedin.com/in/your-profile](https://www.linkedin.com/in/tomris-t-b4656016a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BRQuDqVe5Q1Gz7NvpyPnTvQ%3D%3D))
+]
 ---
 
 Thank you for checking out this repository! 🌟
