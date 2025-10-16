@@ -59,10 +59,4 @@ The repository is organized as follows:
 ### 4. Testing
 - Comprehensive unit and integration tests written with **JUnit** and **Mockito**.
 
----
 
-
-
----
-
-Thank you for checking out this repository! 🌟
